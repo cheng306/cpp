@@ -1,0 +1,6 @@
+link:
+https://www.howtoforge.com/linux-nm-command/
+
+option
+-a (list debug symbols)
+-A (append file name in front)

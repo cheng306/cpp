@@ -1,5 +1,3 @@
-
-
 exe: objects/source1.o 
 	g++ -std=c++17 objects/source1.o objects/Derived.o objects/Base.o -o exe
 

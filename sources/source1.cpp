@@ -3,6 +3,7 @@
 #include <vector>
 #include <numeric>
 #include <string_view>
+#include <string>
 #include "Derived.hpp"
 #include <array>
 #include <algorithm>
@@ -14,30 +15,28 @@ class Resource
 {
 public:
     Resource() { std::cout << "Resource acquired\n"; }
+    
     ~Resource() { std::cout << "Resource destroyed\n"; }
+//private:
+    Resource(const Resource& r){ std::cout << "Copy Resource acquired\n" <<std::endl;}
 };
 
-Auto_ptr2<Resource> func1(){
-  Auto_ptr2<Resource> auto_ptr{new Resource};
-  std::cout<<"here1"<<std::endl;
-  Auto_ptr2<Resource> auto_ptr2 = auto_ptr;
-  std::cout<<"here2"<<std::endl;
-  return auto_ptr2;
-}
+
+
 
 int main(){
-  // Auto_ptr2<Resource> auto_ptr0;
-  // Auto_ptr2<Resource> auto_ptr{new Resource};
-  // auto_ptr0 = std::move(auto_ptr);
-  // std::cout<<"here3"<<std::endl;
+  try{
+    try{
+      Derived bb{};
+      throw bb;
+    }catch(const Base& bb){
+      //std::cout<<bb.a<<std::endl;
+      throw;
+    }
 
-  std::atomic<bool> atomic_bool{true};
-  //atomic_bool = false;
-  std::cout<<atomic_bool<<std::endl;
-
-
-  return 0;
-
-
+  }catch(const Base& bb){
+    bb.method1();
+  }
+  
     
 }

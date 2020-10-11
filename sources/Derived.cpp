@@ -13,11 +13,19 @@ Derived::Derived():Base(12){
     std::cout<<"in Derived constructor"<<std::endl;
 }
 
-void Derived::method1() const{
-    std::cout<<"in method1 const"<<std::endl;
+Derived::Derived(const Derived& derived):Base(){
+    std::cout<<"in Derived copy constructor"<<std::endl;
 }
 
+// void Derived::method1() const{
+//     std::cout<<"in Derived method1 const"<<std::endl;
+// }
+
 void Derived::method1(){
-    std::cout<<"in method1"<<std::endl;
+    std::cout<<"in Derived method1"<<std::endl;
+}
+
+void Derived::method1() const{
+    std::cout<<"in Derived method1 const"<<std::endl;
 }
 

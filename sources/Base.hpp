@@ -4,9 +4,19 @@
 class Base{
 public:
     int a;
-    Base(int);
+    Base(int=12);
+    Base(const Base&);
+
 
     int getA() const;
+
+    void notImplementMethod() const;
+
+    virtual void method1();
+
+    virtual void method1() const;
+
+    typedef int BaseInt;
 };
 
 #endif

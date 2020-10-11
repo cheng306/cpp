@@ -10,8 +10,10 @@ public:
     int b;
     //SampleClass sc;
     Derived();
-    void method1() const;
+    Derived(const Derived&);
+    //void method1() const;
     void method1();
+    void method1() const;
     
 };
 

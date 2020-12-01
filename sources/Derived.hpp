@@ -8,12 +8,21 @@ class Derived: public Base{
 
 public:
     int b;
-    //SampleClass sc;
+    SampleClass sc;
     Derived();
+    Derived(SampleClass scc);
     Derived(const Derived&);
-    //void method1() const;
+
     void method1();
     void method1() const;
+    void method2();
+
+    std::string str;
+
+
+    std::string& getStr(){
+        return str;
+    }
     
 };
 

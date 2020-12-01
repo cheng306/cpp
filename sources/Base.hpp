@@ -6,8 +6,7 @@ public:
     int a;
     Base(int=12);
     Base(const Base&);
-
-
+    
     int getA() const;
 
     void notImplementMethod() const;
@@ -16,7 +15,14 @@ public:
 
     virtual void method1() const;
 
+    void method2();
+
     typedef int BaseInt;
+
+    Base* getThis();
+
+protected:
+    ~Base();
 };
 
 #endif

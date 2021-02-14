@@ -6,10 +6,15 @@
 
 class Derived: public Base{
 
+private:
+    using Base::baseInt;
+
 public:
+    static const int staticInt = 12;
+    inline static const std::string staticStr="adf";
     int b;
     SampleClass sc;
-    Derived();
+    Derived(int);
     Derived(SampleClass scc);
     Derived(const Derived&);
 
@@ -23,7 +28,11 @@ public:
     std::string& getStr(){
         return str;
     }
+
     
 };
+
+
+
 
 #endif

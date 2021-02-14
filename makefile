@@ -1,7 +1,7 @@
 exe: objects/source1.o objects/Derived.o objects/Base.o 
 	g++ -std=c++17  objects/source1.o objects/Derived.o objects/Base.o -o exe
 
-objects/source1.o: sources/source1.cpp sources/Auto_ptr2.hpp bbb
+objects/source1.o: sources/source1.cpp sources/Auto_ptr2.hpp sources/Derived.hpp
 	g++ -std=c++17  -c sources/source1.cpp -o objects/source1.o
 
 objects/source2.o: sources/source2.cpp headers/header2.hpp

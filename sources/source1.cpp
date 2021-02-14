@@ -5,71 +5,95 @@
 #include <string_view>
 #include <string>
 #include "Derived.hpp"
+#include "Base.hpp"
 #include <array>
 #include <algorithm>
 #include <atomic>
 #include <atomic>
+#include <gtest/gtest.h>
 
 #include "Auto_ptr2.hpp"
 #include <boost/lambda/lambda.hpp>
 #include <boost/atomic.hpp>
 
+class SubResource{
+public:
+    int a;
+    SubResource(int a=0):a(a) {
+      std::cout << "SubResource acquired\n";
+    }
+    
+    ~SubResource() { std::cout << "SubResource destroyed\n"; }
+};
+
+
+
 class Resource
 {
+
+  SubResource* sub;
+
+
 public:
-    Resource() { std::cout << "Resource acquired\n"; }
+    Resource(SubResource* sub =nullptr):sub(sub) {
+      std::cout << "Resource acquired\n";
+    }
+
+    // Resource() {
+    //   std::cout << "Resouce empty constructor\n";
+    // }
+
+
+    SubResource& operator*() const{
+      std::cout << "here" << std::endl;
+      return *(this->sub);
+    }
+
+    void operator=(Resource& res2){
+      delete sub;
+      sub = res2.sub;
+      res2.sub = nullptr;
+      std::cout<<"move operator"<<std::endl; 
+    }
     
-    ~Resource() { std::cout << "Resource destroyed\n"; }
+    ~Resource() { delete sub; }
 //private:
     Resource(const Resource& r){ std::cout << "Copy Resource acquired\n" <<std::endl;}
 };
 
-auto makeWalrus(const std::string& name)
-{
-  // Capture name by reference and return the lambda.
-  return [&]() {
-    std::cout << "I am a walrus, my name is " << name << '\n'; // Undefined behavior
-  };
-}
 
-class DeepDerived: public Derived{
-  void method1(){
-    std::cout << "in DeepDerived"<< std::endl;
+class ResouceDerived: public Resource{
+  public:
+
+  ResouceDerived():Resource() {
+    std::cout << "in ResouceDerived empty Constructor\n";
   }
+
+  ~ResouceDerived(){
+    std::cout << "in ResouceDerived destructor\n";
+  }
+
 };
 
-void func1(SampleClass sc){
-
+void func1(int& a){
+  std::cout<<"in func1 v1"<<std::endl;
 }
 
-class Base2
-{
-public:
-	// This version of getThis() returns a pointer to a Base class
-	virtual Base2* getThis() { std::cout << "called Base2::getThis()\n"; printType2(); return this; }
-   void printType() { std::cout << "returned a Basee\n"; }
-  void printType2() { std::cout << "Base printType2\n"; }
-
-
-};
- 
-class Derived2 : public Base2
-{
-public:
-	// Normally override functions have to return objects of the same type as the base function
-	// However, because Derived is derived from Base, it's okay to return Derived* instead of Base*
-	Derived2* getThis() override { std::cout << "called Derived2::getThis()\n"; printType2(); return this; }
-	void printType() { std::cout << "returned a Derived2\n"; }
-  void printType2() { std::cout << "Derived printType2\n"; }
-};
-
+void func1(int a){
+  std::cout<<"in func1 v2"<<std::endl;
+}
 
 
 int main(){
+  SubResource(12);
+  SubResource sr{SubResource(12)};
+
+  std::cout << "abc\rde" <<std::endl;
 
 
-  Base b;
+
 
 
 
 }
+

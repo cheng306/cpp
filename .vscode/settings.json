@@ -76,6 +76,9 @@
         "deque": "cpp",
         "list": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "any": "cpp",
+        "iomanip": "cpp",
+        "variant": "cpp"
     }
 }

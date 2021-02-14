@@ -1,11 +1,18 @@
 #ifndef BASE_HPP
 #define BASE_HPP
 
+#include <string>
+
+
+
 class Base{
 public:
     int a;
-    Base(int=12);
+    int baseInt;
+    Base(int);
     Base(const Base&);
+
+    ~Base();
     
     int getA() const;
 
@@ -21,8 +28,12 @@ public:
 
     Base* getThis();
 
+    Base& operator*();
+
 protected:
-    ~Base();
+
 };
+
+
 
 #endif

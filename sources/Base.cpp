@@ -1,6 +1,9 @@
 #include <iostream>
 #include "Base.hpp"
 
+//std::string Base::baseStr="asdf"; 
+
+
 Base::Base(int a):a(a){
     std::cout<<"within Base constructor"<<std::endl;
 }
@@ -34,6 +37,13 @@ void Base::method2(){
     std::cout<<"in Base method2"<<std::endl;
     
 }
+
+Base& Base::operator*(){
+    return *this;
+
+}
+
+
 
 
 

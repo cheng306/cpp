@@ -2,14 +2,9 @@
 #include "Derived.hpp"
 #include <iostream>
 
-// Derived::Derived(int a, int b):b(b),Base(a){
-//     std::cout<<"in Derived constructor"<<std::endl;
-//     std::cout<<(this->a)<<std::endl;
-//     std::cout<<this->b<<std::endl;
 
-// }
 
-Derived::Derived():Base(12){
+Derived::Derived(int a):Base(a){
     std::cout<<"in Derived constructor"<<std::endl;
 }
 
@@ -19,9 +14,11 @@ Derived::Derived(SampleClass sc):sc(sc), Base(12){
     a=12;
 }
 
-Derived::Derived(const Derived& derived):Base(){
+Derived::Derived(const Derived& derived):Base(12){
     std::cout<<"in Derived copy constructor"<<std::endl;
 }
+
+
 
 
 
@@ -37,4 +34,8 @@ void Derived::method1() const{
 void Derived::method2(){
     std::cout <<"in Derived method2"<<std::endl;  
 }
+
+//int Derived::staticInt=102;
+
+
 

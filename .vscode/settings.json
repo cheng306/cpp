@@ -79,6 +79,8 @@
         "set": "cpp",
         "any": "cpp",
         "iomanip": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "__bits": "cpp",
+        "clocale": "cpp"
     }
 }

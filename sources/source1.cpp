@@ -2,7 +2,9 @@
 
 
 int main(){
-
-  std::cout << "source1.cpp" << std::endl;
+  int a =0;
+  for (; a<10; a++){
+    std::cout << a <<std::endl;
+  }
 }
 

@@ -1,10 +1,25 @@
 #include "../headers/header.hpp"
+#include <functional>
 
+#include <cstdarg>
+
+struct X
+{
+    const static int n = 1;
+    const static int m{2}; // since C++11
+    const static int k;
+};
+const int X::k = 3;
 
 int main(){
-  int a =0;
-  for (; a<10; a++){
-    std::cout << a <<std::endl;
-  }
+  int* a = new int[2]{};
+  int* b = new int[3];
+
+  a[0] = 1;
+  b[0] = 1;
+
+  delete[] a;
+  delete[] b;
+
 }
 

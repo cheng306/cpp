@@ -11,15 +11,18 @@ struct X
 };
 const int X::k = 3;
 
+int func1(int);
+int func1(std::string str);
+
+
+int func1(char a){
+  return a;
+}
 int main(){
-  int* a = new int[2]{};
-  int* b = new int[3];
+  std::string str{"asdf"};
+  func1(str);
 
-  a[0] = 1;
-  b[0] = 1;
 
-  delete[] a;
-  delete[] b;
 
 }
 

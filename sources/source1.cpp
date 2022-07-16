@@ -2,27 +2,36 @@
 #include <functional>
 
 #include <cstdarg>
-
-struct X
-{
-    const static int n = 1;
-    const static int m{2}; // since C++11
-    const static int k;
-};
-const int X::k = 3;
-
-int func1(int);
-int func1(std::string str);
+#include <vector>
 
 
-int func1(char a){
-  return a;
+
+
+std::vector<int> veccc{1,2,3};
+
+void func1(int a){
+  std::cout << "here" <<std::endl;
 }
+
+
+template <typename T, typename U>
+bool max(T t, U u){
+  return t>u;
+}
+
+
+
 int main(){
-  std::string str{"asdf"};
-  func1(str);
 
 
+  const char* a = "abc";
+  const auto b = a;
+  std::cout << b[1] <<std::endl;
 
+  int aa = 12;
+  int bb = aa;
+  std::cout << &aa << std::endl;
+  std::cout << &bb << std::endl;
+  std::cout << max(7.5, 4.5) <<std::endl;
 }
 

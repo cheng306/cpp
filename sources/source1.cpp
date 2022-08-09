@@ -3,6 +3,7 @@
 
 #include <cstdarg>
 #include <vector>
+#include <iostream>
 
 
 
@@ -20,18 +21,33 @@ bool max(T t, U u){
 }
 
 
+struct IntPair
+{
+public:
+	int m_first{};
+	int m_second{};
+
+	void set(int first, int second)
+	{
+		m_first = first;
+		m_second = second;
+	}
+	void print()
+	{
+		std::cout << "Pair(" << m_first << ", " << m_second << ")\n";
+	}
+};
+
 
 int main(){
 
+  IntPair p1;
+	p1.set(1, 1); // set p1 values to (1, 1)
 
-  const char* a = "abc";
-  const auto b = a;
-  std::cout << b[1] <<std::endl;
+	IntPair p2 { 2, 2 }; // initialize p2 values to (2, 2)
 
-  int aa = 12;
-  int bb = aa;
-  std::cout << &aa << std::endl;
-  std::cout << &bb << std::endl;
-  std::cout << max(7.5, 4.5) <<std::endl;
+	p1.print();
+	p2.print();
+
 }
 

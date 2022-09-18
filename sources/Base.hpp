@@ -3,8 +3,6 @@
 
 #include <string>
 
-
-
 class Base{
 public:
     int a;

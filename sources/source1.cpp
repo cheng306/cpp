@@ -38,16 +38,14 @@ public:
 	}
 };
 
+int adder(int, int);
 
 int main(){
 
-  IntPair p1;
-	p1.set(1, 1); // set p1 values to (1, 1)
 
-	IntPair p2 { 2, 2 }; // initialize p2 values to (2, 2)
+  std::cout << adder(3,5) <<std::endl;
 
-	p1.print();
-	p2.print();
+
 
 }
 

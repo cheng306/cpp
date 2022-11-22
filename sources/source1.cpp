@@ -36,7 +36,7 @@ int main(){
 
   std::cout << +Animals::snake << '\n'; 
   double aa = 1.0;
-  std::cout << aa << std::endl;
+  std::cout << 1<< std::endl;
 
 
 

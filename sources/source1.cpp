@@ -29,15 +29,43 @@ constexpr double operator+(Animals a) noexcept
     return static_cast<std::underlying_type_t<Animals>>(a);
 }
 
+struct ClassA{
+  int a {};
+};
+
+
+struct Employee
+{
+    int id {};
+    int age {};
+    double wage {};
+   
+
+    Employee(int x, int y, double w):id(x), age(y), wage(w){
+      std::cout << 1 <<std::endl;
+    }
+
+    Employee(int x, int y, double w){
+      std::cout << 2 <<std::endl;
+    }
+
+};
+
+
+
+
+
+
+
 
 
 int main(){
 
 
-  std::cout << +Animals::snake << '\n'; 
-  double aa = 1.0;
-  std::cout << 1<< std::endl;
-
+  ClassA clsA{1};
+  Employee em{1,2,2.0};
+  //std::cout << 1<< std::endl;
+  ClassA classA;
 
 
 }

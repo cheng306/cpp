@@ -36,7 +36,10 @@ int main(){
 
   std::cout << +Animals::snake << '\n'; 
   double aa = 1.0;
-  std::cout << 1<< std::endl;
+
+  int arr[10];
+  arr[1]=2;
+  std::cout <<arr.at(1)<< std::endl;
 
 
 

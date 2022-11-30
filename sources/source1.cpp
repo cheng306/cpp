@@ -34,22 +34,20 @@ struct ClassA{
 };
 
 
-struct Employee
-{
-    int id {};
-    int age {};
-    double wage {};
-   
-
-    Employee(int x, int y, double w):id(x), age(y), wage(w){
-      std::cout << 1 <<std::endl;
-    }
-
-    Employee(int x, int y, double w){
-      std::cout << 2 <<std::endl;
-    }
-
+class A {
+public:
+    virtual void show() = 0;
 };
+  
+class B : public virtual A {
+};
+  
+class C : public virtual A {
+};
+  
+class D : public B, public C {
+};
+  
 
 
 
@@ -61,11 +59,10 @@ struct Employee
 
 int main(){
 
+  A a;
+  //a.show();
 
-  ClassA clsA{1};
-  Employee em{1,2,2.0};
-  //std::cout << 1<< std::endl;
-  ClassA classA;
+
 
 
 

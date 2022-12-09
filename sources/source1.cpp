@@ -30,13 +30,17 @@ constexpr double operator+(Animals a) noexcept
 }
 
 struct ClassA{
-  int a {};
+  int a {13};
 };
+
+typedef struct ClassA* ClassAStar;
+
+typedef ClassA* ClassAStar2;
 
 
 class A {
 public:
-    virtual void show() = 0;
+  int intA = 12;
 };
   
 class B : public virtual A {
@@ -47,23 +51,39 @@ class C : public virtual A {
   
 class D : public B, public C {
 };
+
+
   
 
+bool intReturnTrue(int a){
+  return true;
+}
+
+bool intReturnFalse(int a){
+  return false;
+}
+
+
+void refInt(int& in){
+  std::cout << in <<std::endl;
+}
 
 
 
+ int foo(){return 0;};
 
+ enum class tiny : bool {
+    one, two 
+};
 
 
 
 
 int main(){
 
-  A a;
-  //a.show();
-
-
-
+  tiny a = tiny::one;
+  std::cout<<  (a == true) << std::endl;
+  
 
 
 }

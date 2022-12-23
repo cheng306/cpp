@@ -81,6 +81,11 @@
         "iomanip": "cpp",
         "variant": "cpp",
         "__bits": "cpp",
-        "clocale": "cpp"
+        "clocale": "cpp",
+        "*.tcc": "cpp",
+        "compare": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "numbers": "cpp"
     }
 }

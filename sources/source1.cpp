@@ -11,19 +11,20 @@ void myInvoke(const std::function<void()>& fn)
     fn();
 }
 
+namespace ns{
+  void func12(int a){
+    std::cout << "ns12" <<std::endl;
+  }
+}
+
+void func12(int a){
+    std::cout << "12" <<std::endl;
+  }
+
 int main(){
+  using ns::func12;
 
-  int i{ 0 };
-
-    // Increments and prints its local copy of @i.
-    auto count{ [i]() mutable {
-      std::cout << ++i << '\n';
-    } };
-
-    myInvoke(count);
-    myInvoke(count);
-    myInvoke(count);
-
+  func12(14);
 
 }
 

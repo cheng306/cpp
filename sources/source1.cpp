@@ -5,26 +5,17 @@
 #include <vector>
 #include <iostream>
 
+struct StructA{
+  int a=1;
+  int b;
+} sta1;
 
-void myInvoke(const std::function<void()>& fn)
-{
-    fn();
-}
 
-namespace ns{
-  void func12(int a){
-    std::cout << "ns12" <<std::endl;
-  }
-}
 
-void func12(int a){
-    std::cout << "12" <<std::endl;
-  }
 
 int main(){
-  using ns::func12;
-
-  func12(14);
-
+  std::cout << sta1.a << std::endl;
+  StructA sta2;
+  std::cout << sta1.b << std::endl;
 }
 

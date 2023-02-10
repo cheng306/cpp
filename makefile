@@ -10,7 +10,7 @@ objects/adder.o: sources/adder.cpp
 objects/source1.o: sources/source1.cpp headers/header.hpp
 	g++ -std=c++17 -c -g sources/source1.cpp -o objects/source1.o
 
-objects/source2.o: sources/source2.cpp headers/header2.hpp
+objects/source2.o: sources/source2.cpp headers/header2.hpp headers/header.hpp
 	g++ -std=c++17  -c -g sources/source2.cpp -o objects/source2.o
 
 # objects/Derived.o: sources/Derived.cpp sources/Derived.hpp sources/Base.hpp sources/Base.cpp
